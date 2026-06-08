@@ -1,3 +1,4 @@
+/* Tailwind v4 entry — keep @import here (required by Tailwind; Sass deprecation is expected) */
 @import "tailwindcss";
 
 @theme inline {
@@ -262,3 +263,6 @@
         @apply order-last;
     }
 }
+
+/* Common components (navbar, footer, buttons, text) — after Tailwind */
+@import "./scss/main.scss";

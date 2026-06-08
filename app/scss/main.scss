@@ -1,0 +1,5 @@
+// Common components — imported at the end of globals.scss (after Tailwind).
+@use "components/navbar";
+@use "components/footer";
+@use "components/buttons";
+@use "components/text";

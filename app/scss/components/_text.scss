@@ -1,3 +1,8 @@
-.text {
-    @include mix.text (32px, 700, $text-color);
+@use "../variable" as *;
+@use "../mixin" as mix;
+
+@layer components {
+    .text-body {
+        @include mix.text(32px, 700, $text-color);
+    }
 }
