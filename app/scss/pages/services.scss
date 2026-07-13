@@ -1,0 +1,53 @@
+@use "../variable" as *;
+@use "../mixin" as mix;
+
+.services-hero {
+    padding-top: 120px;
+
+    @media (max-width: 767px) {
+        padding-top: 80px;
+    }
+
+    h1 {
+        @include mix.text-style(60px, 500, $text-color);
+        line-height: 116.87%;
+        letter-spacing: -0.03em;
+
+        @media (max-width: 767px) {
+            font-size: 32px;
+            line-height: 42px;
+        }
+
+        span {
+            color: $primary-color;
+        }
+    }
+}
+
+.products {
+    @media (max-width: 767px) {
+        padding: 50px 10px;
+    }
+
+    h3 {
+        @include mix.text-style(40px, 600, $text-color);
+        line-height: 50px;
+        letter-spacing: -0.7px;
+
+        @media (max-width: 767px) {
+            font-size: 28px;
+            line-height: 42px;
+        }
+    }
+
+    .text-prod {
+        @include mix.text-style(24px, 400, $text-color);
+        line-height: 36px;
+        letter-spacing: -0.7px;
+
+        @media (max-width: 767px) {
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+}

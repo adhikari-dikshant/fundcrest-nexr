@@ -13,7 +13,7 @@
     }
 
     .container {
-        @apply mx-auto px-4 w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px];
+        @apply mx-auto px-2 w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px];
     }
 
     /* ── ROW ── */
@@ -64,6 +64,14 @@
 
     .g-2>.col {
         @apply px-2;
+    }
+
+    .g-3>.col {
+        @apply px-3;
+    }
+
+    .g-4>.col {
+        @apply px-4;
     }
 
     /* ── COL WIDTHS ── */
@@ -261,6 +269,12 @@
 
     .order-last {
         @apply order-last;
+    }
+
+    /* ── IMG ── */
+    .img-fluid {
+        @apply w-full h-full;
+        object-fit: cover;
     }
 }
 

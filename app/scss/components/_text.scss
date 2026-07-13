@@ -3,6 +3,32 @@
 
 @layer components {
     .text-body {
-        @include mix.text(32px, 700, $text-color);
+        @include mix.text-style(16px, 400, $text-color);
+        line-height: 27.2px;
+    }
+
+    .text-body-big {
+        @include mix.text-style(20px, 400, $text-color);
+        line-height: 30px;
+
+        @media (max-width: 768px) {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    .head {
+        @include mix.text-style(48px, 500, $text-color);
+        line-height: 58px;
+        letter-spacing: -0.5px;
+
+        @media (max-width: 768px) {
+            font-size: 32px;
+            line-height: 42px;
+        }
+
+        span {
+            color: $primary-color;
+        }
     }
 }

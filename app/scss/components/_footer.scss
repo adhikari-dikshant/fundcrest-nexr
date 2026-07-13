@@ -2,5 +2,199 @@
 @use "../mixin" as mix;
 
 @layer components {
-    // .footer { }
+    .site-footer {
+        background: $secondary-color;
+        color: #fff;
+        padding: 64px 0 32px;
+        margin-top: auto;
+        border-radius: 24px;
+        margin-bottom: 10px !important;
+
+        @media (max-width: 768px) {
+            padding: 70px 0 0;
+        }
+
+        &--merged {
+            position: relative;
+            z-index: 1;
+            margin: 0 8px;
+            padding-top: 280px;
+
+
+            @media (max-width: 768px) {
+                padding-top: 260px;
+            }
+        }
+
+        &--default {
+            margin: 8px;
+            border-radius: 24px;
+        }
+
+        &__main {
+            margin-bottom: 40px;
+        }
+
+        &__logo {
+            width: 180px;
+            min-height: 56px;
+            margin-bottom: 24px;
+        }
+
+        &__tagline {
+            @include mix.text-style(18px, 400, rgba(255, 255, 255, 0.85));
+            line-height: 1.7;
+            max-width: 320px;
+            margin: 0;
+
+            @media (max-width: 768px) {
+                max-width: 100%;
+            }
+        }
+
+        &__heading {
+            @include mix.text-style(16px, 500, rgba(255, 255, 255, 0.55));
+            line-height: 1.2;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin: 0 0 20px;
+        }
+
+        &__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li+li {
+                margin-top: 14px;
+            }
+
+            a {
+                @include mix.text-style(18px, 400, #fff);
+                line-height: 1.4;
+                text-decoration: none;
+                transition: opacity 0.2s ease;
+
+                &:hover {
+                    opacity: 0.75;
+                }
+            }
+        }
+
+        &__contact-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+
+                +li {
+                    margin-top: 16px;
+                }
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                    flex-shrink: 0;
+                    margin-top: 2px;
+                }
+
+                span,
+                a {
+                    @include mix.text-style(18px, 400, rgba(255, 255, 255, 0.9));
+                    line-height: 1.6;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    opacity: 0.75;
+                }
+            }
+        }
+
+        &__divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.15);
+            margin-bottom: 24px;
+        }
+
+        &__copy {
+            @include mix.text-style(14px, 500, rgba(255, 255, 255, 0.7));
+            line-height: 1.4;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        &__legal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+
+            a {
+                @include mix.text-style(14px, 500, rgba(255, 255, 255, 0.7));
+                line-height: 1.4;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                text-decoration: none;
+                transition: opacity 0.2s ease;
+
+                &:hover {
+                    opacity: 0.75;
+                }
+            }
+        }
+
+        &__social {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 14px;
+
+            a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.08);
+                transition: background 0.2s ease;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.16);
+                }
+
+                img {
+                    width: 18px;
+                    height: 18px;
+                    display: block;
+                }
+            }
+        }
+
+        &__bottom {
+            >[class*="col-"] {
+                margin-bottom: 16px;
+            }
+
+            @media (min-width: 768px) {
+                >[class*="col-"] {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            &__legal,
+            &__social {
+                justify-content: flex-start;
+            }
+        }
+    }
 }

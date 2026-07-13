@@ -1,0 +1,25 @@
+@use "../variable" as *;
+@use "../mixin" as mix;
+
+@layer components {
+    .card {
+        @apply bg-white rounded-lg shadow-md;
+        border: 1px solid #E0E0E0;
+        transition: all 0.3s ease;
+
+        .card-header {
+            @apply bg-white/50 text-white rounded-t-lg;
+            padding: 1rem;
+        }
+
+        .card-body {
+            @apply p-4;
+            padding: 1rem;
+        }
+
+        .card-footer {
+            @apply bg-white/50 text-white rounded-b-lg;
+            padding: 1rem;
+        }
+    }
+}

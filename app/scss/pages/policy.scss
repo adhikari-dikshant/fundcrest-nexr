@@ -1,0 +1,128 @@
+@use "../variable" as *;
+@use "../mixin" as mix;
+
+.policy-doc {
+    padding-top: 120px;
+    padding-bottom: 80px;
+
+    @media (max-width: 767px) {
+        padding-top: 96px;
+        padding-bottom: 56px;
+    }
+
+    &__title {
+        @include mix.text-style(48px, 500, $text-color);
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+
+        @media (max-width: 767px) {
+            font-size: 32px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__heading {
+        @include mix.text-style(22px, 600, $text-color);
+        line-height: 1.35;
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
+
+    &__subheading {
+        @include mix.text-style(18px, 600, $text-color);
+        line-height: 1.4;
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
+
+    &__paragraph {
+        @include mix.text-style(16px, 400, rgba($text-color, 0.88));
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    &__list {
+        margin: 0;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+            @include mix.text-style(16px, 400, rgba($text-color, 0.88));
+            line-height: 1.7;
+        }
+    }
+
+    &__table-wrap {
+        overflow-x: auto;
+        margin: 8px 0;
+    }
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 520px;
+
+        th,
+        td {
+            padding: 14px 16px;
+            text-align: left;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            @include mix.text-style(15px, 400, $text-color);
+            line-height: 1.5;
+        }
+
+        th {
+            background: #f7f7f4;
+            font-weight: 600;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__card {
+        display: block;
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        background: #f9f8f3;
+        text-decoration: none;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+
+        h2 {
+            @include mix.text-style(20px, 600, $text-color);
+            margin: 0 0 8px;
+        }
+
+        p {
+            margin: 0;
+            @include mix.text-style(15px, 400, rgba($text-color, 0.8));
+            line-height: 1.6;
+        }
+
+        &:hover {
+            border-color: rgba($text-color, 0.2);
+            transform: translateY(-2px);
+        }
+    }
+
+    a {
+        color: $secondary-color;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+}
