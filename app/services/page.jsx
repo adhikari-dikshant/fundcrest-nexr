@@ -1,5 +1,13 @@
 import { asset } from "../lib/asset";
+import { createPageMetadata } from "../lib/site";
 import "../scss/pages/services.scss";
+
+export const metadata = createPageMetadata({
+    title: "Our Services",
+    description:
+        "Explore secured, unsecured, MSME, business, and personal loan solutions from Fundcrest Capital Private Limited.",
+    path: "/services",
+});
 
 export default function ServicesPage() {
     return (
@@ -40,7 +48,7 @@ export default function ServicesPage() {
                         </div>
 
                         <div className="col-12 col-md-6 offset-md-1">
-                            <img src={asset("/p1.webp")} alt="" className="mb-8 md:mb-0" />
+                            <img src={asset("/p1.webp")} alt="Secured and unsecured loan solutions" className="mb-8 md:mb-0" />
 
                             <a href="#" className="btn-main w-full iniline-block md:hidden">
                                 Learn More About Secured Loans
@@ -65,7 +73,7 @@ export default function ServicesPage() {
                             </a>
                         </div>
                         <div className="col-12 col-md-6 order-md-1">
-                            <img src={asset("/p2.webp")} alt="" className="mb-8 md:mb-0" />
+                            <img src={asset("/p2.webp")} alt="MSME loan for small and medium enterprises" className="mb-8 md:mb-0" />
                             <a href="#" className="btn-main w-full iniline-block md:hidden">
                                 Learn More About MSME Loans
                             </a>
@@ -90,7 +98,7 @@ export default function ServicesPage() {
                             </a>
                         </div>
                         <div className="col-12 col-md-6 offset-md-1">
-                            <img src={asset("/p3.webp")} alt="" className="mb-8 md:mb-0" />
+                            <img src={asset("/p3.webp")} alt="Business loan funding for enterprises" className="mb-8 md:mb-0" />
                             <a href="#" className="btn-main w-full iniline-block md:hidden">
                                 Learn More About Business Loans
                             </a>
@@ -114,7 +122,7 @@ export default function ServicesPage() {
                             </a>
                         </div>
                         <div className="col-12 col-md-6 order-md-1">
-                            <img src={asset("/p4.webp")} alt="" className="mb-8 md:mb-0" />
+                            <img src={asset("/p4.webp")} alt="Personal loan for individual financial needs" className="mb-8 md:mb-0" />
                             <a href="#" className="btn-main w-full iniline-block md:hidden">
                                 Learn More About Personal Loans
                             </a>

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import Modal from "./modal";
+import { asset } from "../lib/asset";
 
 const products = [
     "Secured/Unsecured Loan",
@@ -88,13 +88,25 @@ export default function ConnectForm() {
 
         setStatus(STATUS.SENDING);
 
+        const data = new FormData(form);
+
         try {
-            await emailjs.sendForm(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-                form,
-                { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }
-            );
+            const res = await fetch(asset("/api/contact.php"), {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: data.get("name"),
+                    email: data.get("email"),
+                    phone: data.get("phone"),
+                    product: data.get("product"),
+                    message: data.get("message"),
+                }),
+            });
+
+            if (!res.ok) {
+                throw new Error("Request failed");
+            }
+
             setStatus(STATUS.SUCCESS);
             setModal({ type: "success", message: "Thanks! We'll be in touch within one business day." });
             form.reset();

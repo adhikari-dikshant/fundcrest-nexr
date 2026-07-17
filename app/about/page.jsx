@@ -1,5 +1,13 @@
 import { asset } from "../lib/asset";
+import { createPageMetadata } from "../lib/site";
 import "../scss/pages/about.scss";
+
+export const metadata = createPageMetadata({
+    title: "About Us",
+    description:
+        "Learn about Fundcrest Capital Private Limited — our vision, mission, board of directors, and customer grievance redressal mechanism.",
+    path: "/about",
+});
 
 const philosophyItems = [
     {
@@ -115,7 +123,7 @@ export default function About() {
                 </div>
             </section>
 
-            <img src={asset("/ab-hero.webp")} alt="" className="my-10 md:my-16" />
+            <img src={asset("/ab-hero.webp")} alt="Fundcrest Capital office and team" className="my-10 md:my-16" />
 
             <section className="about-content pb-10 md:pb-16">
                 <div className="container">

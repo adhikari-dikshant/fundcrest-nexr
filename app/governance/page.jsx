@@ -1,5 +1,13 @@
 import Link from "next/link";
+import { createPageMetadata } from "../lib/site";
 import "../scss/pages/policy.scss";
+
+export const metadata = createPageMetadata({
+    title: "Governance",
+    description:
+        "Explore Fundcrest Capital governance policies, including AML/KYC and customer grievance redressal standards.",
+    path: "/governance",
+});
 
 const governanceLinks = [
     {

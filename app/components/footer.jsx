@@ -23,7 +23,7 @@ const socialLinks = [
 
 export default function Footer({ variant = "merged" }) {
     return (
-        <footer className={`site-footer site-footer--${variant}`}>
+        <footer id="footer" className={`site-footer site-footer--${variant}`}>
             <div className="container">
                 <div className="row site-footer__main">
                     <div className="col-12 col-md-4 mb-8 md:mb-0">

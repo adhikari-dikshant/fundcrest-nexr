@@ -1,7 +1,16 @@
-import { asset } from "../lib/asset";
-import "../scss/pages/home.scss";
+import Link from "next/link";
 import Accordian from "../components/accordian";
+import JsonLd from "../components/json-ld";
 import TestimonialCarousel from "../components/testimonial-carousel";
+import { asset } from "../lib/asset";
+import { createPageMetadata, getFaqJsonLd } from "../lib/site";
+import "../scss/pages/home.scss";
+
+export const metadata = createPageMetadata({
+    path: "/",
+    description:
+        "Fundcrest Capital Private Limited offers secured, MSME, business, and personal loans with transparent, customer-focused lending for individuals and growing businesses.",
+});
 
 const testimonials = [
     {
@@ -52,6 +61,7 @@ const faqItems = [
 export default function Home() {
     return (
         <>
+            <JsonLd data={getFaqJsonLd(faqItems)} />
             <section className="hero">
                 <div className="container-fluid hero__container">
                     <div className="row items-end hero__row">
@@ -72,11 +82,11 @@ export default function Home() {
 
                             <div className="hero__actions mt-8">
                                 <div className="hero__avatars hidden md:block">
-                                    <img src={asset("/avatar.webp")} alt="" className="hero__avatar-group" />
+                                    <img src={asset("/avatar.webp")} alt="Fundcrest customers" className="hero__avatar-group" />
                                     <p className="hero__avatar-text">Let&apos;s Build Your Financial Future</p>
                                 </div>
-                                <a href="#" className="btn-main">Apply for Loan</a>
-                                <a href="#" className="btn-outline">Whatsapp Us</a>
+                                <a href="#footer" className="btn-main">Apply for Loan</a>
+                                <a href="https://wa.me/918118845455" className="btn-outline">Whatsapp Us</a>
                             </div>
                         </div>
                     </div>
@@ -95,7 +105,7 @@ export default function Home() {
                                 Formerly known as H.K. Financiers Private Limited, the Company has evolved with a renewed vision to serve the changing financial needs of modern businesses and individuals. As a Non-Banking Financial Company (NBFC) registered with the Reserve Bank of India, we combine financial discipline with a customer-first approach to deliver solutions that are practical, transparent, and responsive.
                             </p>
 
-                            <a href="/about" className="btn-main mb-12">Learn More About Us</a>
+                            <Link href="/about" className="btn-main mb-12">Learn More About Us</Link>
 
                             <div className="row">
                                 <div className="col-12 col-md-6 mb-5 md:mb-0">
@@ -119,11 +129,11 @@ export default function Home() {
                                         </div>
                                     </div>
 
-                                    <img src={asset("/ab-sm1.webp")} alt="" />
+                                    <img src={asset("/ab-sm1.webp")} alt="Fundcrest lending consultation" />
                                 </div>
 
                                 <div className="col-12 col-md-6">
-                                    <img src={asset("/ab-sm2.webp")} alt="" className="mb-5 hidden md:block" />
+                                    <img src={asset("/ab-sm2.webp")} alt="Business growth with Fundcrest" className="mb-5 hidden md:block" />
 
                                     <div className="card card-about shadow-none border-none mb-5">
                                         <div className="card-body px-5 py-4">
@@ -144,14 +154,14 @@ export default function Home() {
                                         </div>
                                     </div>
 
-                                    <img src={asset("/ab-sm2.webp")} alt="" className="mb-5 block md:hidden" />
+                                    <img src={asset("/ab-sm2.webp")} alt="Business growth with Fundcrest" className="mb-5 block md:hidden" />
 
                                 </div>
                             </div>
                         </div>
 
                         <div className="col-12 col-md-5 md:pl-0">
-                            <img src={asset("/about.webp")} alt="about" className="shadow-md rounded-lg" />
+                            <img src={asset("/about.webp")} alt="Fundcrest Capital financial advisory team" className="shadow-md rounded-lg" />
                         </div>
                     </div>
                 </div>
@@ -195,7 +205,7 @@ export default function Home() {
                         </div>
 
                         <div className="col-12 col-md-6 offset-md-1">
-                            <img src={asset("/p1.webp")} alt="" className="mb-8 md:mb-0" />
+                            <img src={asset("/p1.webp")} alt="Secured and unsecured loan solutions" className="mb-8 md:mb-0" />
 
                             <a href="#" className="btn-main w-full iniline-block md:hidden">
                                 Learn More About Secured Loans
@@ -220,7 +230,7 @@ export default function Home() {
                             </a>
                         </div>
                         <div className="col-12 col-md-6 order-md-1">
-                            <img src={asset("/p2.webp")} alt="" className="mb-8 md:mb-0" />
+                            <img src={asset("/p2.webp")} alt="MSME loan for small and medium enterprises" className="mb-8 md:mb-0" />
                             <a href="#" className="btn-main w-full iniline-block md:hidden">
                                 Learn More About MSME Loans
                             </a>
@@ -245,7 +255,7 @@ export default function Home() {
                             </a>
                         </div>
                         <div className="col-12 col-md-6 offset-md-1">
-                            <img src={asset("/p3.webp")} alt="" className="mb-8 md:mb-0" />
+                            <img src={asset("/p3.webp")} alt="Business loan funding for enterprises" className="mb-8 md:mb-0" />
                             <a href="#" className="btn-main w-full iniline-block md:hidden">
                                 Learn More About Business Loans
                             </a>
@@ -269,7 +279,7 @@ export default function Home() {
                             </a>
                         </div>
                         <div className="col-12 col-md-6 order-md-1">
-                            <img src={asset("/p4.webp")} alt="" className="mb-8 md:mb-0" />
+                            <img src={asset("/p4.webp")} alt="Personal loan for individual financial needs" className="mb-8 md:mb-0" />
                             <a href="#" className="btn-main w-full iniline-block md:hidden">
                                 Learn More About Personal Loans
                             </a>
@@ -549,13 +559,13 @@ export default function Home() {
                                 Common questions on financial planning and investing
                             </p>
 
-                            <a href="#" className="btn-main hidden md:inline-flex">Know More About Fundcrest</a>
+                            <Link href="/about" className="btn-main hidden md:inline-flex">Know More About Fundcrest</Link>
                         </div>
 
                         <div className="col-12 col-md-6 offset-md-1">
                             <Accordian items={faqItems} />
 
-                            <a href="#" className="btn-main inline-block md:hidden mt-5">Know More About Fundcrest</a>
+                            <Link href="/about" className="btn-main inline-block md:hidden mt-5">Know More About Fundcrest</Link>
                         </div>
                     </div>
                 </div>

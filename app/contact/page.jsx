@@ -1,6 +1,14 @@
 import ConnectForm from "../components/form";
 import { asset } from "../lib/asset";
+import { createPageMetadata } from "../lib/site";
 import "../scss/pages/contact.scss";
+
+export const metadata = createPageMetadata({
+    title: "Contact Us",
+    description:
+        "Contact Fundcrest Capital in Jaipur for loan enquiries. Call +91 81188 45455 or email info@fundcrestcapital.com.",
+    path: "/contact",
+});
 
 const contactDetails = [
     {
