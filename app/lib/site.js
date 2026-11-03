@@ -64,7 +64,9 @@ export function absoluteUrl(path = "/") {
         return BASE_PATH ? `${SITE_URL}${BASE_PATH}` : SITE_URL;
     }
 
-    return `${SITE_URL}${BASE_PATH}${normalized}`;
+    // Pages match trailingSlash: true; files (/logo.webp, /sitemap.xml) stay as-is.
+    const withSlash = /\.\w+$/.test(normalized) || normalized.endsWith("/") ? normalized : `${normalized}/`;
+    return `${SITE_URL}${BASE_PATH}${withSlash}`;
 }
 
 export function createPageMetadata({
